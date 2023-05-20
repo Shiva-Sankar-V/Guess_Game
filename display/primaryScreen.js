@@ -3,7 +3,7 @@ import PrimaryButton from "../Components/PrimaryButton";
 function StartScreen() {
   return (
     <View style={styles.input}>
-      <TextInput />
+      <TextInput style={styles.numberInput} />
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
     </View>
@@ -14,13 +14,22 @@ export default StartScreen;
 
 const styles = StyleSheet.create({
   input: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
     padding: 16,
     marginTop: 100,
     marginHorizontal: 24,
     backgroundColor: "#72063c",
-    borderRadius: 15,
+    borderRadius: 10,
     elevation: 4,
+  },
+  numberInput: {
+    height: 50,
+    width: 40,
+    fontSize: 32,
+    borderBottomColor: "#ddb52f",
+    borderBottomWidth: 2,
+    color: "#ddb52f",
+    marginVertical: 8,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
