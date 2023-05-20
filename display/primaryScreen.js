@@ -3,7 +3,7 @@ import PrimaryButton from "../Components/PrimaryButton";
 function StartScreen() {
   return (
     <View style={styles.input}>
-      <TextInput style={styles.numberInput} />
+      <TextInput style={styles.numberInput} maxLength={2} />
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
     </View>
