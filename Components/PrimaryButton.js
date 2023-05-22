@@ -1,5 +1,4 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 function PrimaryButton(props) {
   function pressed() {
