@@ -1,5 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import colors from "../Utilities/colors.js";
+import colors from "../../Utilities/colors";
 
 function PrimaryButton(props) {
   return (
