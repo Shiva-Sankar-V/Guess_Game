@@ -1,6 +1,8 @@
 import { TextInput, View, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../Components/PrimaryButton";
 import { useState } from "react";
+import colors from "../Utilities/colors";
+
 function StartScreen(props) {
   const [enteredno, setenteredno] = useState("");
 
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 100,
     marginHorizontal: 24,
-    backgroundColor: "#3b021f",
+    backgroundColor: colors.primary800,
     borderRadius: 10,
     elevation: 4,
   },
@@ -64,9 +66,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: 45,
     fontSize: 32,
-    borderBottomColor: "#ddb52f",
+    borderBottomColor: colors.accent500,
     borderBottomWidth: 2,
-    color: "#ddb52f",
+    color: colors.accent500,
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
