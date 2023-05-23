@@ -14,7 +14,7 @@ function generateRandomBetween(min, max, exclude) {
 }
 
 function GameScreen(props) {
-  const initialGuess = generateRandomBetween(1, 100, props.inputedNumber);
+  const initialGuess = generateRandomBetween(1, 100, props.onpickedNum);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   return (
     <View style={styles.screen}>
