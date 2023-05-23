@@ -22,7 +22,7 @@ function StartScreen(props) {
       );
       return;
     }
-    props.pickedNum(inputedNumber);
+    props.onpickedNum(inputedNumber);
   }
   return (
     <View style={styles.input}>

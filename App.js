@@ -10,7 +10,7 @@ export default function App() {
     setuserNum(pickedNum);
   }
 
-  let screen = <StartScreen onPickNum={pickedNumHandler} />;
+  let screen = <StartScreen onpickedNum={pickedNumHandler} />;
 
   if (userNum) {
     screen = <GameScreen />;
