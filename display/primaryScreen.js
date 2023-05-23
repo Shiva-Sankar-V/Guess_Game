@@ -1,7 +1,8 @@
-import { TextInput, View, StyleSheet, Alert } from "react-native";
+import { TextInput, View, StyleSheet, Alert, Text } from "react-native";
 import PrimaryButton from "../Components/Ui/PrimaryButton";
 import { useState } from "react";
 import colors from "../Utilities/colors";
+import Title from "../Components/Ui/Title";
 
 function StartScreen(props) {
   const [enteredno, setenteredno] = useState("");
@@ -27,22 +28,26 @@ function StartScreen(props) {
     props.onpickedNum(inputedNumber);
   }
   return (
-    <View style={styles.input}>
-      <TextInput
-        style={styles.numberInput}
-        maxLength={2}
-        keyboardType="number-pad"
-        autoCapitalize="none"
-        autoCorrect={false}
-        onChangeText={inputNumber}
-        value={enteredno}
-      />
-      <View style={styles.buttons}>
-        <View style={styles.button}>
-          <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
-        </View>
-        <View style={styles.button}>
-          <PrimaryButton onPress={confirmInputNumber}>Confirm</PrimaryButton>
+    <View style={styles.rootContainer}>
+      <Title>Guess My Number</Title>
+      <View style={styles.input}>
+        <Text style={styles.instructionText}>Enter a number</Text>
+        <TextInput
+          style={styles.numberInput}
+          maxLength={2}
+          keyboardType="number-pad"
+          autoCapitalize="none"
+          autoCorrect={false}
+          onChangeText={inputNumber}
+          value={enteredno}
+        />
+        <View style={styles.buttons}>
+          <View style={styles.button}>
+            <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
+          </View>
+          <View style={styles.button}>
+            <PrimaryButton onPress={confirmInputNumber}>Confirm</PrimaryButton>
+          </View>
         </View>
       </View>
     </View>
@@ -52,6 +57,12 @@ function StartScreen(props) {
 export default StartScreen;
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1,
+    marginTop: 100,
+    alignItems: "center",
+  },
+
   input: {
     padding: 16,
     justifyContent: "center",
@@ -61,6 +72,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary800,
     borderRadius: 10,
     elevation: 4,
+  },
+  instructionText: {
+    color: colors.accent500,
+    fontSize: 24,
   },
   numberInput: {
     height: 50,
