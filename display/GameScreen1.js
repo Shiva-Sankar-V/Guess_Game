@@ -1,9 +1,8 @@
 import { View, StyleSheet, Alert } from "react-native";
 import Title from "../Components/Ui/Title";
 import { useEffect, useState } from "react";
-// import {} from "expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import NumberCointainer from "../Components/Game/NumberCointainer";
-import PrimaryButton from "../Components/Ui/PrimaryButton";
 import Card from "../Components/Ui/Card";
 import InstructionText from "../Components/Ui/InstructionText";
 import Button from "../Components/Ui/Button";
@@ -63,7 +62,7 @@ function GameScreen(props) {
         <Button
           onPress={nextGuessedNo.bind(this, "lower")}
           onPress2={nextGuessedNo.bind(this, "greater")}
-          one="-"
+          one={<Ionicons name="md-remove" size={24} color="white" />}
           two="+"
         />
       </Card>
