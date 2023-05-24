@@ -27,6 +27,7 @@ function GameScreen(props) {
       props.onGameOver();
     }
   }, [currentGuess, props.onpickedNum, props.onGameOver]);
+
   function nextGuessedNo(direction) {
     if (
       (direction === "lower" && currentGuess < props.onpickedNum) ||
