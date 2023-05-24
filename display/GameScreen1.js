@@ -79,7 +79,7 @@ function GameScreen(props) {
           two={<Ionicons name="md-add" size={24} color="white" />}
         />
       </Card>
-      <View>
+      <View style={styles.listContainer}>
         {/* {guessRounds.map((guessRound) => (
           <Text key={guessRound}>{guessRound}</Text>
         ))} */}
@@ -108,5 +108,9 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     marginBottom: 12,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 10,
   },
 });
