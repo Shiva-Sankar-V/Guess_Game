@@ -63,7 +63,7 @@ function GameScreen(props) {
           onPress={nextGuessedNo.bind(this, "lower")}
           onPress2={nextGuessedNo.bind(this, "greater")}
           one={<Ionicons name="md-remove" size={24} color="white" />}
-          two="+"
+          two={<Ionicons name="md-add" size={24} color="white" />}
         />
       </Card>
       {/* <View>LOG ROUNDS</View> */}
