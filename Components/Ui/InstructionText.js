@@ -3,7 +3,9 @@ import React from "react";
 import colors from "../../Utilities/colors";
 
 function InstructionText(props) {
-  return <Text style={styles.instructionText}>{props.children}</Text>;
+  return (
+    <Text style={[styles.instructionText, props.style]}>{props.children}</Text>
+  );
 }
 
 export default InstructionText;

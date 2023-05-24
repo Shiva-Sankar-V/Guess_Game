@@ -56,7 +56,9 @@ function GameScreen(props) {
       <Title> Opponent's Guess</Title>
       <NumberCointainer>{currentGuess}</NumberCointainer>
       <Card>
-        <InstructionText>Higher or Lower?</InstructionText>
+        <InstructionText style={styles.instructionText}>
+          Higher or Lower?
+        </InstructionText>
         <Button>
           <PrimaryButton onPress={nextGuessedNo.bind(this, "lower")}>
             -
@@ -78,5 +80,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     marginTop: 30,
+  },
+  instructionText: {
+    marginBottom: 12,
   },
 });
