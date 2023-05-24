@@ -5,6 +5,7 @@ import colors from "../Utilities/colors";
 import Title from "../Components/Ui/Title";
 import Card from "../Components/Ui/Card";
 import InstructionText from "../Components/Ui/InstructionText";
+import Button from "../Components/Ui/Button";
 
 function StartScreen(props) {
   const [enteredno, setenteredno] = useState("");
@@ -44,14 +45,11 @@ function StartScreen(props) {
           onChangeText={inputNumber}
           value={enteredno}
         />
-        <View style={styles.buttons}>
-          <View style={styles.button}>
-            <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
-          </View>
-          <View style={styles.button}>
-            <PrimaryButton onPress={confirmInputNumber}>Confirm</PrimaryButton>
-          </View>
-        </View>
+
+        <Button>
+          <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
+          <PrimaryButton onPress={confirmInputNumber}>Confirm</PrimaryButton>
+        </Button>
       </Card>
     </View>
   );
@@ -76,11 +74,5 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
-  },
-  buttons: {
-    flexDirection: "row",
-  },
-  button: {
-    flex: 1,
   },
 });

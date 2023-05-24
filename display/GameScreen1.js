@@ -5,6 +5,7 @@ import NumberCointainer from "../Components/Game/NumberCointainer";
 import PrimaryButton from "../Components/Ui/PrimaryButton";
 import Card from "../Components/Ui/Card";
 import InstructionText from "../Components/Ui/InstructionText";
+import Button from "../Components/Ui/Button";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -56,15 +57,14 @@ function GameScreen(props) {
       <NumberCointainer>{currentGuess}</NumberCointainer>
       <Card>
         <InstructionText>Higher or Lower?</InstructionText>
-
-        <View>
+        <Button>
           <PrimaryButton onPress={nextGuessedNo.bind(this, "lower")}>
             -
           </PrimaryButton>
           <PrimaryButton onPress={nextGuessedNo.bind(this, "greater")}>
             +
           </PrimaryButton>
-        </View>
+        </Button>
       </Card>
       {/* <View>LOG ROUNDS</View> */}
     </View>
