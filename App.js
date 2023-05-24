@@ -6,16 +6,20 @@ import { useFonts } from "expo-font";
 import GameScreen from "./display/GameScreen1";
 import colors from "./Utilities/colors";
 import GameOverScreen from "./display/GameOverScreen";
+import AppLoading from "expo-app-loading";
 
 export default function App() {
   const [userNum, setuserNum] = useState();
   const [gameIsOver, setGameIsOver] = useState(true);
 
-  useFonts({
-    font1: require("./assets/fonts/OpenSans-Regular.ttf"),
-    font2: require("./assets/fonts/OpenSans-Bold.ttf"),
+  const [fontloaded] = useFonts({
+    "font-1": require("./assets/fonts/OpenSans-Regular.ttf"),
+    "font-2": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 
+  if (!fontloaded) {
+    return <AppLoading />;
+  }
   function pickedNumHandler(pickedNum) {
     setuserNum(pickedNum);
     setGameIsOver(false);

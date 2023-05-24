@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
   },
 
   guessedNoText: {
-    fontSize: 40,
-    fontWeight: "bold",
+    fontSize: 36,
+    fontFamily: "font-2",
     color: colors.accent500,
   },
 });
