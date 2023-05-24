@@ -25,8 +25,9 @@ export default function App() {
     setuserNum(pickedNum);
     setGameIsOver(false);
   }
-  function gameOverHandler() {
+  function gameOverHandler(numofRounds) {
     setGameIsOver(true);
+    setGuessRounds(numofRounds);
   }
   function startNewGameHandler() {
     setuserNum(null);

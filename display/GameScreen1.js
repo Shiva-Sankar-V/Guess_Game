@@ -26,7 +26,7 @@ function GameScreen(props) {
   const [guessRounds, setGuessRounds] = useState([initialGuess]);
   useEffect(() => {
     if (currentGuess === props.onpickedNum) {
-      props.onGameOver();
+      props.onGameOver(guessRounds.length);
     }
   }, [currentGuess, props.onpickedNum, props.onGameOver]);
 
