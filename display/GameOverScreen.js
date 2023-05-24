@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
-
+import { StyleSheet, Image, View } from "react-native";
+import Title from "../Components/Ui/Title";
 function GameOverScreen() {
   return (
     <View>
-      <Text>GameOverScreen</Text>
+      <Title>GAME OVER!</Title>
+      <Image source={require("../assets/primary_image/success.jpg")} />
     </View>
   );
 }
