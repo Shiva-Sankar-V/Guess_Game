@@ -1,14 +1,34 @@
 import { StyleSheet, Image, View } from "react-native";
 import Title from "../Components/Ui/Title";
+import colors from "../Utilities/colors";
 function GameOverScreen() {
   return (
     <View>
       <Title>GAME OVER!</Title>
-      <Image source={require("../assets/primary_image/success.jpg")} />
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require("../assets/primary_image/success.jpg")}
+        />
+      </View>
     </View>
   );
 }
 
 export default GameOverScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  imageContainer: {
+    height: 300,
+    width: 300,
+    borderRadius: 150,
+    borderWidth: 3,
+    borderColor: colors.primary800,
+    overflow: "hidden",
+    margin: 36,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+});
