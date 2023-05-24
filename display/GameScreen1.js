@@ -28,6 +28,11 @@ function GameScreen(props) {
     }
   }, [currentGuess, props.onpickedNum, props.onGameOver]);
 
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
+
   function nextGuessedNo(direction) {
     if (
       (direction === "lower" && currentGuess < props.onpickedNum) ||
