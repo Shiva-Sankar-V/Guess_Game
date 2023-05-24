@@ -2,6 +2,7 @@ import { ImageBackground, StyleSheet } from "react-native";
 import StartScreen from "./display/primaryScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
+import { useFonts } from "expo-font";
 import GameScreen from "./display/GameScreen1";
 import colors from "./Utilities/colors";
 import GameOverScreen from "./display/GameOverScreen";
@@ -9,6 +10,11 @@ import GameOverScreen from "./display/GameOverScreen";
 export default function App() {
   const [userNum, setuserNum] = useState();
   const [gameIsOver, setGameIsOver] = useState(true);
+
+  useFonts({
+    font1: require("./assets/fonts/OpenSans-Regular.ttf"),
+    font2: require("./assets/fonts/OpenSans-Bold.ttf"),
+  });
 
   function pickedNumHandler(pickedNum) {
     setuserNum(pickedNum);
