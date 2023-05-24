@@ -1,6 +1,7 @@
 import { View, StyleSheet, Alert } from "react-native";
 import Title from "../Components/Ui/Title";
 import { useEffect, useState } from "react";
+// import {} from "expo/vector-icons";
 import NumberCointainer from "../Components/Game/NumberCointainer";
 import PrimaryButton from "../Components/Ui/PrimaryButton";
 import Card from "../Components/Ui/Card";
@@ -59,14 +60,12 @@ function GameScreen(props) {
         <InstructionText style={styles.instructionText}>
           Higher or Lower?
         </InstructionText>
-        <Button>
-          <PrimaryButton onPress={nextGuessedNo.bind(this, "lower")}>
-            -
-          </PrimaryButton>
-          <PrimaryButton onPress={nextGuessedNo.bind(this, "greater")}>
-            +
-          </PrimaryButton>
-        </Button>
+        <Button
+          onPress={nextGuessedNo.bind(this, "lower")}
+          onPress2={nextGuessedNo.bind(this, "greater")}
+          one="-"
+          two="+"
+        />
       </Card>
       {/* <View>LOG ROUNDS</View> */}
     </View>

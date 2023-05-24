@@ -45,11 +45,12 @@ function StartScreen(props) {
           onChangeText={inputNumber}
           value={enteredno}
         />
-
-        <Button>
-          <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
-          <PrimaryButton onPress={confirmInputNumber}>Confirm</PrimaryButton>
-        </Button>
+        <Button
+          onPress={resetInput}
+          onPress2={confirmInputNumber}
+          one="reset"
+          two="confirm"
+        />
       </Card>
     </View>
   );

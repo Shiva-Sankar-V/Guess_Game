@@ -5,7 +5,10 @@ const Button = (props) => {
   return (
     <View style={styles.buttons}>
       <View style={styles.button}>
-        <PrimaryButton>{props.children}</PrimaryButton>
+        <PrimaryButton onPress={props.onPress}>{props.one}</PrimaryButton>
+      </View>
+      <View style={styles.button}>
+        <PrimaryButton onPress={props.onPress2}>{props.two}</PrimaryButton>
       </View>
     </View>
   );
