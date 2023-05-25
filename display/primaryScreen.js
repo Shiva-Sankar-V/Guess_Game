@@ -5,6 +5,7 @@ import {
   Alert,
   useWindowDimensions,
   KeyboardAvoidingView,
+  ScrollView,
 } from "react-native";
 import { useState } from "react";
 import colors from "../Utilities/colors";
@@ -39,7 +40,7 @@ function StartScreen(props) {
   }
   const marginTopDis = height < 450 ? 50 : 100;
   return (
-    <KeyboardAvoidingView style={styles.screen}>
+    <KeyboardAvoidingView style={styles.screen} behavior="position">
       <View style={[styles.rootContainer, { marginTop: marginTopDis }]}>
         <Title>Guess My Number</Title>
         <Card>
