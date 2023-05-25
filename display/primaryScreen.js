@@ -40,30 +40,32 @@ function StartScreen(props) {
   }
   const marginTopDis = height < 450 ? 50 : 100;
   return (
-    <KeyboardAvoidingView style={styles.screen} behavior="position">
-      <View style={[styles.rootContainer, { marginTop: marginTopDis }]}>
-        <Title>Guess My Number</Title>
-        <Card>
-          <InstructionText>Enter a number</InstructionText>
+    <ScrollView style={styles.screen}>
+      <KeyboardAvoidingView style={styles.screen} behavior="position">
+        <View style={[styles.rootContainer, { marginTop: marginTopDis }]}>
+          <Title>Guess My Number</Title>
+          <Card>
+            <InstructionText>Enter a number</InstructionText>
 
-          <TextInput
-            style={styles.numberInput}
-            maxLength={2}
-            keyboardType="number-pad"
-            autoCapitalize="none"
-            autoCorrect={false}
-            onChangeText={inputNumber}
-            value={enteredno}
-          />
-          <Button
-            onPress={resetInput}
-            onPress2={confirmInputNumber}
-            one="reset"
-            two="confirm"
-          />
-        </Card>
-      </View>
-    </KeyboardAvoidingView>
+            <TextInput
+              style={styles.numberInput}
+              maxLength={2}
+              keyboardType="number-pad"
+              autoCapitalize="none"
+              autoCorrect={false}
+              onChangeText={inputNumber}
+              value={enteredno}
+            />
+            <Button
+              onPress={resetInput}
+              onPress2={confirmInputNumber}
+              one="reset"
+              two="confirm"
+            />
+          </Card>
+        </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 
