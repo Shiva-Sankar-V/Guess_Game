@@ -8,12 +8,14 @@ function Card(props) {
 
 export default Card;
 
+const deviceWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   input: {
     padding: 16,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 100,
+    marginTop: deviceWidth < 380 ? 18 : 36,
     marginHorizontal: 24,
     backgroundColor: colors.primary800,
     borderRadius: 10,
