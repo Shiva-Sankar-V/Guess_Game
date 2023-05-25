@@ -1,4 +1,4 @@
-import { View, StyleSheet, Alert, Text, FlatList } from "react-native";
+import { View, StyleSheet, Alert, Dimensions, FlatList } from "react-native";
 import Title from "../Components/Ui/Title";
 import { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -100,11 +100,13 @@ function GameScreen(props) {
 
 export default GameScreen;
 
+const deviceWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
-    marginTop: 30,
+    marginTop: deviceWidth < 380 ? 18 : 36,
     alignItems: "center",
   },
   instructionText: {
