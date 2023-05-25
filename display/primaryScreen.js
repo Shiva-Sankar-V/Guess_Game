@@ -1,4 +1,11 @@
-import { TextInput, View, StyleSheet, Alert } from "react-native";
+import {
+  TextInput,
+  View,
+  StyleSheet,
+  Alert,
+  useWindowDimensions,
+  KeyboardAvoidingView,
+} from "react-native";
 import { useState } from "react";
 import colors from "../Utilities/colors";
 import Title from "../Components/Ui/Title";
@@ -9,6 +16,7 @@ import Button from "../Components/Ui/Button";
 function StartScreen(props) {
   const [enteredno, setenteredno] = useState("");
 
+  const { height, width } = useWindowDimensions();
   function inputNumber(enteredno) {
     setenteredno(enteredno);
   }
@@ -29,38 +37,47 @@ function StartScreen(props) {
     }
     props.onpickedNum(inputedNumber);
   }
+  const marginTopDis = height < 450 ? 50 : 100;
   return (
-    <View style={styles.rootContainer}>
-      <Title>Guess My Number</Title>
-      <Card>
-        <InstructionText>Enter a number</InstructionText>
+    <KeyboardAvoidingView style={styles.screen}>
+      <View style={[styles.rootContainer, { marginTop: marginTopDis }]}>
+        <Title>Guess My Number</Title>
+        <Card>
+          <InstructionText>Enter a number</InstructionText>
 
-        <TextInput
-          style={styles.numberInput}
-          maxLength={2}
-          keyboardType="number-pad"
-          autoCapitalize="none"
-          autoCorrect={false}
-          onChangeText={inputNumber}
-          value={enteredno}
-        />
-        <Button
-          onPress={resetInput}
-          onPress2={confirmInputNumber}
-          one="reset"
-          two="confirm"
-        />
-      </Card>
-    </View>
+          <TextInput
+            style={styles.numberInput}
+            maxLength={2}
+            keyboardType="number-pad"
+            autoCapitalize="none"
+            autoCorrect={false}
+            onChangeText={inputNumber}
+            value={enteredno}
+          />
+          <Button
+            onPress={resetInput}
+            onPress2={confirmInputNumber}
+            one="reset"
+            two="confirm"
+          />
+        </Card>
+      </View>
+    </KeyboardAvoidingView>
   );
 }
 
 export default StartScreen;
 
+// const deviceHeight = Dimensions.get("window").height;
+
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+
   rootContainer: {
     flex: 1,
-    marginTop: 100,
+    // marginTop: deviceHeight < 450 ? 50 : 100,
     alignItems: "center",
   },
 
